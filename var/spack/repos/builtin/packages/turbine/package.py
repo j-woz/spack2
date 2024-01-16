@@ -56,7 +56,8 @@ class Turbine(AutotoolsPackage):
         args = [
             "--with-c-utils=" + self.spec["exmcutils"].prefix,
             "--with-adlb=" + self.spec["adlbx"].prefix,
-            "--with-tcl=" + self.spec["tcl"].prefix,
+            "--with-tclsh=" + self.spec["tcl"].prefix + "/bin/tclsh",
+            "--enable-tcl-config",
             "--with-mpi=" + self.spec["mpi"].prefix,
             "--disable-static-pkg",
         ]
