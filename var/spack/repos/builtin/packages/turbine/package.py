@@ -56,7 +56,8 @@ class Turbine(AutotoolsPackage):
         args = [
             "--with-c-utils=" + self.spec["exmcutils"].prefix,
             "--with-adlb=" + self.spec["adlbx"].prefix,
-            "--with-tclsh=" + self.spec["tcl"].prefix + "/bin/tclsh",
+            # Note that Spack supports only Tcl 8.6.*
+            "--with-tclsh=" + self.spec["tcl"].prefix + "/bin/tclsh8.6",
             "--enable-tcl-config",
             "--with-mpi=" + self.spec["mpi"].prefix,
             "--disable-static-pkg",
